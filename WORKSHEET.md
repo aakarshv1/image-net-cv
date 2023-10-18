@@ -8,7 +8,7 @@ This is the worksheet for Homework 1. Your deliverables for this homework are:
 - [ ] Kaggle submission and writeup (details below)
 - [ ] Github repo with all of your code! You need to either fork it or just copy the code over to your repo. A simple way of doing this is provided below. Include the link to your repo below. If you would like to make the repo private, please dm us and we'll send you the GitHub usernames to add as collaborators.
 
-`YOUR GITHUB REPO HERE (or notice that you DMed us to share a private repo)`
+`[uwu](https://github.com/aakarshv1/image-net-cv)`
 
 ## To move to your own repo:
 
@@ -28,15 +28,15 @@ Feel free to ask your NMEP friends if you don't know!
 
 ## -1.0 What is the difference between `torch.nn.Module` and `torch.nn.functional`?
 
-`YOUR ANSWER HERE`
+torch.nn.Module is the base for all neural networks in PyTorch, while torch.nn.functional contains things like activation functions that can be used within the neural network.
 
 ## -1.1 What is the difference between a Dataset and a DataLoader?
 
-`YOUR ANSWER HERE`
+Datasets contain the actual data that the model uses while DataLoader is a wrapper for the Dataset that makes it easier to input the data into a Torch model. DataLoaders provide functionality like batching, shuffling, and parallel loading.
 
 ## -1.2 What does `@torch.no_grad()` above a function header do?
 
-`YOUR ANSWER HERE`
+It temporarily disables the calculation of gradients.
 
 
 
@@ -46,25 +46,50 @@ Read through `README.md` and follow the steps to understand how the repo is stru
 
 ## 0.0 What are the `build.py` files? Why do we have them?**
 
-`YOUR ANSWER HERE`
+These are the files that server as a liason between the config and the actual model. They determine what functions and classes to import and call to run the model.
 
 ## 0.1 Where would you define a new model?
 
-`YOUR ANSWER HERE`
+The `models` directory
 
 ## 0.2 How would you add support for a new dataset? What files would you need to change?
 
-`YOUR ANSWER HERE`
+You'd have to add a class for that dataset in `data/datasets.py`
 
 ## 0.3 Where is the actual training code?
 
-`YOUR ANSWER HERE`
+`main.py`
 
 ## 0.4 Create a diagram explaining the structure of `main.py` and the entire code repo.
 
 Be sure to include the 4 main functions in it (`main`, `train_one_epoch`, `validate`, `evaluate`) and how they interact with each other. Also explain where the other files are used. No need to dive too deep into any part of the code for now, the following parts will do deeper dives into each part of the code. For now, read the code just enough to understand how the pieces come together, not necessarily the specifics. You can use any tool to create the diagram (e.g. just explain it in nice markdown, draw it on paper and take a picture, use draw.io, excalidraw, etc.)
 
-`YOUR ANSWER HERE`
+```
+configs/            # contains all of the configs for the project
+  resnet/           # you can organize configs by model
+  ...
+data/               # contains all of the data related code
+  build.py          # contains the data loader builder
+  datasets.py       # where dataset loaders are defined
+  ...
+models/             # contains all of the model related code
+  build.py          # contains the model builder
+  resnet.py         # ResNet definition
+  ...
+utils/              # misc. utils for the project
+  ... 
+config.py           # contains the config parser; define defaults here!!
+main.py             # main training loop
+optimizer.py        # optimizer definition
+```
+`main.py` is, as the name suggests, the main "runner" file, 
+- **main()** is the (once again kind of self explanatory) main function that calls all the lower functions that perform the essential ML operations like data loading, training, and evaluating.
+- 
+
+
+
+
+
 
 
 
