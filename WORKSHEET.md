@@ -8,7 +8,7 @@ This is the worksheet for Homework 1. Your deliverables for this homework are:
 - [ ] Kaggle submission and writeup (details below)
 - [ ] Github repo with all of your code! You need to either fork it or just copy the code over to your repo. A simple way of doing this is provided below. Include the link to your repo below. If you would like to make the repo private, please dm us and we'll send you the GitHub usernames to add as collaborators.
 
-`[uwu](https://github.com/aakarshv1/image-net-cv)`
+[uwu](https://github.com/aakarshv1/image-net-cv)
 
 ## To move to your own repo:
 
